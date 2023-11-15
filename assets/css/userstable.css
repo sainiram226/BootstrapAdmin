@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.userstable{
+    border-collapse: collapse;
+    border: 1px solid rgb(110, 110, 110);
+    border-radius: 20px;
+    padding: 20px;
+    width: 100%;
+}
+
+.userstable table{
+    width: 100%;
+    text-align: center;
+}
+
+.userstable table td, th{
+    font-size:.8rem;
+    color:#000000;
+    padding: 10px 0;
+    vertical-align: middle;
+}
+.userstable thead, .userstable tbody{
+    border-radius: 0px;
+}
+tr{
+    border-bottom: 1px solid #000;
+}
+tbody tr:last-child{
+    border-bottom: none!important;
+}
