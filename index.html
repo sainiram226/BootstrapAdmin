@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Bootstrap css cdn link -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <!-- bootstrap icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <!-- css style sheet -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <!-- css style sheet for users table -->
+    <link rel="stylesheet" href="./assets/css/userstable.css" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Chart js cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- ApxChartjs -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <!-- alpine js cdn -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+  </head>
+
+  <body>
+    <div id="main">
+      <!-- sidebar -->
+      <div class="sidebar h-100 pt-3">
+        <div class="px-4" style="max-width: 100%">
+          <div class="profile text-center mb-5 position-relative">
+            <div class="logo position-absolute top-0 start-0">
+              <i class="bi bi-fire text-white fs-3"></i>
+            </div>
+            <button
+              onclick="activesidebar()"
+              class="togle d-inline d-lg-none position-absolute end-0"
+            >
+              <i class="bi bi-list text-white fs-2"></i>
+            </button>
+            <input
+              type="file"
+              id="pro_up"
+              onchange="loadFile(event);loadFile03(event)  "
+              hidden
+            />
+            <a href="./userProfile.html">
+              <img
+                src="./assets/images/profile.jpg"
+                alt="user"
+                class="rounded-circle border border-white object-fit-cover"
+                style="object-position: top"
+                width="100"
+                height="102"
+                id="output" /></a
+            ><label for="pro_up">
+              <div class="edit_icon position-absolute">
+                <i class="bi bi-camera text-white fs-5"></i>
+              </div>
+            </label>
+            <div class="profile_text mt-4">
+              <span class="d-block fs-6 mb-0">Mouni Roy</span>
+              <span class="d-block fs-7">shavaneya@gmail.com</span>
+            </div>
+          </div>
+          <div class="ps-3">
+            <span class="text-info d-block fs-7 fw-bold">DASHBOARD</span>
+            <span class="d-block fs-8">Unique dashboard designs</span>
+          </div>
+
+          <div class="sidebarnav">
+            <ul class="list-unstyled text-white mt-3">
+              <li>
+                <a
+                  href="./index.html"
+                  class="active rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white"
+                >
+                  <i class="bi bi-kanban fs-5"></i>
+                  <span class="text-white mt-1">Dashboard</span></a
+                >
+              </li>
+              <li class="accordion-item">
+                <a
+                  href="#"
+                  class="accordion-button collapsed position-relative rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseOne"
+                  aria-expanded="false"
+                  aria-controls="flush-collapseOne"
+                >
+                  <i class="bi bi-pie-chart-fill fs-5"></i>
+                  <span class="text-white mt-1">Users</span>
+                  <i
+                    class="bi bi-caret-right downarrow position-absolute text-white fs-5"
+                  ></i>
+                </a>
+                <ul
+                  id="flush-collapseOne"
+                  class="accordion-collapse collapse list-unstyled"
+                  data-bs-parent="#accordionFlushExample"
+                >
+                  <li class="accordion-body">
+                    <a
+                      href="./user.html"
+                      class="rounded-3 py-2 ps-5 mb-1 d-flex text-decoration-none text-white"
+                    >
+                      <span class="text-white mt-1">User Management</span></a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white"
+                >
+                  <i class="bi bi-chat-left-text fs-5"></i>
+                  <span class="text-white mt-1">Chat</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white"
+                >
+                  <i class="bi bi-people fs-5"></i>
+                  <span class="text-white mt-1">Contacts</span></a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="ps-3">
+            <span class="text-info d-block fs-7 fw-bold">APPLICATIONS</span>
+            <span class="d-block fs-8">Custom made application designs</span>
+          </div>
+
+          <div class="sidebarnav">
+            <li class="accordion-item">
+              <a
+                href="#"
+                class="accordion-button collapsed position-relative rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#flush-collapsetwo"
+                aria-expanded="false"
+                aria-controls="flush-collapsetwo"
+              >
+                <i class="bi bi-table me-2 fs-5"></i>
+                <span class="text-white mt-1">Tables</span>
+                <i
+                  class="bi bi-caret-right downarrow position-absolute text-white fs-5"
+                ></i>
+              </a>
+              <ul
+                id="flush-collapsetwo"
+                class="accordion-collapse collapse list-unstyled"
+                data-bs-parent="#accordionFlushExample"
+              >
+                <li class="accordion-body">
+                  <a
+                    href="./user.html"
+                    class="rounded-3 py-2 ps-5 mb-1 d-flex text-decoration-none text-white"
+                  >
+                    <span class="text-white mt-1">User Management</span></a
+                  >
+                </li>
+              </ul>
+            </li>
+            <ul class="list-unstyled text-white mt-3">
+              <li>
+                <a
+                  href="#"
+                  class="rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white"
+                >
+                  <i class="bi bi-mortarboard me-2 fs-5"></i>
+                  <span class="text-white fs-6 mt-1">Academy</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white"
+                >
+                  <i class="bi bi-chat-left-text fs-5"></i>
+                  <span class="text-white mt-1">Chat</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white"
+                >
+                  <i class="bi bi-people fs-5"></i>
+                  <span class="text-white mt-1">Contacts</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white"
+                >
+                  <i class="bi bi-cart3 me-2 fs-5"></i>
+                  <span class="text-white fs-6 mt-1">ECommerce</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white"
+                >
+                  <i class="bi bi-cloud me-2 fs-5"></i>
+                  <span class="text-white fs-6 mt-1">File Manager</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white"
+                >
+                  <i class="bi bi-kanban me-2 fs-5"></i>
+                  <span class="text-white fs-6 mt-1">Help Center</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white"
+                >
+                  <i class="bi bi-envelope me-2 fs-5"></i>
+                  <span class="text-white fs-6 mt-1">Mailbox</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white"
+                >
+                  <i class="bi bi-kanban me-2 fs-5"></i>
+                  <span class="text-white fs-6 mt-1">Project</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white"
+                >
+                  <i class="bi bi-kanban me-2 fs-5"></i>
+                  <span class="text-white fs-6 mt-1">Project</span></a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- main-Content -->
+      <div class="main-content">
+        <!-- header navigation bar -->
+        <header>
+          <nav
+            id="searchbar"
+            class="navbar bg-white border-bottom shadow-sm position-relative d-flex justify-content-between align-items-center py-2 px-4"
+          >
+            <button onclick="activesidebar()" class="togle">
+              <i class="bi bi-list fs-2"></i>
+            </button>
+            <div
+              class="notify d-flex align-content-center justify-content-center"
+            >
+              <button onclick="showsearch()" class="icons">
+                <i class="bi bi-search fs-5 me-4"></i>
+              </button>
+
+              <div class="btn-group dropstart me-4">
+                <button
+                  class="dropdown-toggle"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <img
+                    src="./assets/images/india.png"
+                    alt="flag"
+                    height="33"
+                    width="33"
+                  />
+                </button>
+                <ul class="dropdown-menu top-100 border-0 shadow-sm">
+                  <li>
+                    <a class="dropdown-item" href="#"
+                      ><img
+                        src="./assets/images/india.png"
+                        alt="flag"
+                        height="33"
+                        width="33"
+                      />
+                      <span>Hindi</span></a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#"
+                      ><img
+                        src="./assets/images/united-states-of-america.png"
+                        alt="flag"
+                        height="33"
+                        width="33"
+                      />
+                      <span>English</span></a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div
+              class="searchbar bg-white position-absolute w-100 h-100 start-0 d-flex justify-content-between"
+            >
+              <button onclick="showsearch()" class="icons">
+                <i class="bi bi-search fs-5 ms-4"></i>
+              </button>
+              <input
+                class="form-control rounded-0 border-0 h-100 fs-6"
+                placeholder="Search...."
+                type="search"
+                name="search"
+                id="search"
+              />
+              <button onclick="showsearch()" class="icons">
+                <i class="bi bi-x fs-2 me-4"></i>
+              </button>
+            </div>
+          </nav>
+        </header>
+        <!-- bio card -->
+        <div
+          class="card_head py-5 bg-white border-bottom"
+          style="height: 204px"
+        >
+          <div class="container">
+            <div class="row justify-content-between">
+              <div class="col-6">
+                <div class="d-flex">
+                  <img
+                    src="./assets/images/profile.jpg"
+                    alt="user pic"
+                    class="rounded-circle border object-fit-cover border-white"
+                    width="60"
+                    height="60"
+                    id="output03"
+                  />
+                  <span class="ms-3">
+                    <h2>Welcome back, Brian!</h2>
+                    <p>
+                      <span><i class="bi bi-bell-fill"></i></span> You have 2
+                      new messages and 15 new tasks
+                    </p>
+                  </span>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="buttons mt-3 text-end">
+                  <button class="btn rounded-pill btn-dark px-4 py-2">
+                    <i class="bi bi-envelope-fill text-white fs-6 me-2"></i>
+                    <span class="text-white">Messages</span>
+                  </button>
+                  <button class="btn rounded-pill bg-info px-4 py-2">
+                    <i class="bi bi-gear-fill text-white fs-6 me-2"></i>
+                    <span class="text-white">Settings</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <main class="container">
+          <!-- Tabs section -->
+          <section class="py-5 widgets">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-lg-3">
+                  <div class="card p-4 rounded rounded-4">
+                    <div class="card-title d-flex justify-content-between">
+                      <h4>Summary</h4>
+                      <div class="dropdown">
+                        <button
+                          class="dropdown-toggle"
+                          type="button"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                        >
+                          <i class="bi bi-three-dots-vertical"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">Action</a></li>
+                          <li>
+                            <a class="dropdown-item" href="#">Another action</a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" href="#"
+                              >Something else here</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div class="text-center">
+                      <span class="fw-bold mb-0" style="color: #3b82f6"
+                        >21</span
+                      >
+                      <h6 class="mt-0" style="color: #3b82f6">Due Tasks</h6>
+
+                      <h5 class="fw-light fs-7">Completed: <span>13</span></h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <div class="card p-4 rounded rounded-4">
+                    <div class="card-title d-flex justify-content-between">
+                      <h4>Summary</h4>
+                      <div class="dropdown">
+                        <button
+                          class="dropdown-toggle"
+                          type="button"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                        >
+                          <i class="bi bi-three-dots-vertical"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">Action</a></li>
+                          <li>
+                            <a class="dropdown-item" href="#">Another action</a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" href="#"
+                              >Something else here</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div class="text-center">
+                      <span class="fw-bold mb-0" style="color: #ef4444"
+                        >17</span
+                      >
+                      <h6 class="mt-0" style="color: #ef4444">Tasks</h6>
+
+                      <h5 class="fw-light fs-7">Completed: <span>9</span></h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <div class="card p-4 rounded rounded-4">
+                    <div class="card-title d-flex justify-content-between">
+                      <h4>Summary</h4>
+                      <div class="dropdown">
+                        <button
+                          class="dropdown-toggle"
+                          type="button"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                        >
+                          <i class="bi bi-three-dots-vertical"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">Action</a></li>
+                          <li>
+                            <a class="dropdown-item" href="#">Another action</a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" href="#"
+                              >Something else here</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div class="text-center">
+                      <span class="fw-bold mb-0" style="color: #f59e0b"
+                        >24</span
+                      >
+                      <h6 class="mt-0" style="color: #f59e0b">Open</h6>
+
+                      <h5 class="fw-light fs-7">Completed: <span>19</span></h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <div class="card p-4 rounded rounded-4">
+                    <div class="card-title d-flex justify-content-between">
+                      <h4>Summary</h4>
+                      <div class="dropdown">
+                        <button
+                          class="dropdown-toggle"
+                          type="button"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                        >
+                          <i class="bi bi-three-dots-vertical"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">Action</a></li>
+                          <li>
+                            <a class="dropdown-item" href="#">Another action</a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" href="#"
+                              >Something else here</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div class="text-center">
+                      <span class="fw-bold mb-0" style="color: #22c55e"
+                        >38</span
+                      >
+                      <h6 class="mt-0" style="color: #22c55e">Proposals</h6>
+
+                      <h5 class="fw-light fs-7">Completed: <span>16</span></h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Management section -->
+
+          <section class="management">
+            <div class="rounded-4 bg-white p-4 mx-3">
+              <div class="manage_title d-flex justify-content-between">
+                <div class="title">
+                  <h6>Github Issues Summary</h6>
+                </div>
+                <div class="weekbuttons buttons d-flex">
+                  <button class="rounded-pill fs-6_5 px-4 py-2 me-1">
+                    <span>Last Week</span>
+                  </button>
+                  <button
+                    class="rounded-pill fs-6_5 bg-secondary-subtle px-4 py-2"
+                  >
+                    This Week
+                  </button>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-6">
+                  <div>
+                    <canvas id="barChart"></canvas>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="manage_cards positon">
+                    <span class="positon-absolute top-0 start-0">
+                      Overview
+                    </span>
+
+                    <div class="row g-4 pt-4">
+                      <div class="col-lg-6">
+                        <div class="card card_issues rounded-4">
+                          <h2>214</h2>
+                          <h6>New issues</h6>
+                        </div>
+                      </div>
+                      <div class="col-lg-6">
+                        <div class="card card_closed rounded-4">
+                          <h2>214</h2>
+                          <h6>New issues</h6>
+                        </div>
+                      </div>
+
+                      <div class="col-lg-3">
+                        <div class="card card_solved rounded-4">
+                          <h3>3</h3>
+                          <h6 class="fs-7">Fixed</h6>
+                        </div>
+                      </div>
+                      <div class="col-lg-3">
+                        <div class="card card_solved rounded-4">
+                          <h3>4</h3>
+                          <h6 class="fs-7">Fixed</h6>
+                        </div>
+                      </div>
+                      <div class="col-lg-3">
+                        <div class="card card_solved rounded-4">
+                          <h3>8</h3>
+                          <h6 class="fs-7">Fixed</h6>
+                        </div>
+                      </div>
+                      <div class="col-lg-3">
+                        <div class="card card_solved rounded-4">
+                          <h3>6</h3>
+                          <h6 class="fs-7">Fixed</h6>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Schedule section -->
+          <section class="schedule py-5">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="schedule-card bg-white overflow-hidden rounded-4">
+                    <div class="text d-flex px-3 pt-3 justify-content-between">
+                      <h6>Schedule</h6>
+                      <div class="buttons">
+                        <button
+                          class="rounded-pill fs-6_5 bg-secondary-subtle px-4 py-2"
+                        >
+                          Today
+                        </button>
+                        <button class="rounded-pill fs-6_5 px-4 py-2 me-1">
+                          <span>Tomorrow</span>
+                        </button>
+                      </div>
+                    </div>
+
+                    <div class="cart_polararea mb-5">
+                      <div class="mx-auto" style="height: 330px; width: 340px">
+                        <canvas id="areaChart"></canvas>
+                      </div>
+                    </div>
+
+                    <div class="task_rank">
+                      <div class="row g-0">
+                        <div class="col-6">
+                          <div
+                            class="text-center py-4"
+                            style="background: #f8fafc"
+                          >
+                            <h2 class="fw-bold">524</h2>
+                            <span class="text-black">New task</span>
+                          </div>
+                        </div>
+                        <div class="col-6">
+                          <div
+                            class="text-center py-4"
+                            style="background: #f8fafc"
+                          >
+                            <h2 class="fw-bold">119</h2>
+                            <span class="text-black">Complete task</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="schedule-card bg-white rounded-4 p-3">
+                    <div class="text d-flex justify-content-between">
+                      <h6>Schedule</h6>
+                      <div class="buttons">
+                        <button
+                          class="rounded-pill fs-6_5 bg-secondary-subtle px-4 py-2"
+                        >
+                          Today
+                        </button>
+                        <button class="rounded-pill fs-6_5 px-4 py-2 me-1">
+                          <span>Tomorrow</span>
+                        </button>
+                      </div>
+                    </div>
+                    <ul class="px-4 list-unstyled">
+                      <li class="border-bottom py-2">
+                        <div class="text-start">
+                          <h6 class="fs-6_5">Group Meeting</h6>
+                          <div class="time_local">
+                            <span class="pe-2">
+                              <a class="text-decoration-none fs-7" href="#"
+                                ><i class="bi bi-clock-fill fs-6_5"></i> in 32
+                                minutes</a
+                              >
+                            </span>
+                            <span class="ps-2">
+                              <a class="fs-7 text-decoration-none" href="#"
+                                ><i class="bi bi-geo-alt-fill fs-6_5"></i>
+                                Conference room 1B</a
+                              >
+                            </span>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="border-bottom py-2">
+                        <div class="text-start">
+                          <h6 class="fs-6_5">Group Meeting</h6>
+                          <div class="time_local">
+                            <span class="pe-2">
+                              <a class="text-decoration-none fs-7" href="#"
+                                ><i class="bi bi-clock-fill fs-6_5"></i> in 32
+                                minutes</a
+                              >
+                            </span>
+                            <span class="ps-2">
+                              <a class="fs-7 text-decoration-none" href="#"
+                                ><i class="bi bi-geo-alt-fill fs-6_5"></i>
+                                Conference room 1B</a
+                              >
+                            </span>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="border-bottom py-2">
+                        <div class="text-start">
+                          <h6 class="fs-6_5">Group Meeting</h6>
+                          <div class="time_local">
+                            <span class="pe-2">
+                              <a class="text-decoration-none fs-7" href="#"
+                                ><i class="bi bi-clock-fill fs-6_5"></i> in 32
+                                minutes</a
+                              >
+                            </span>
+                            <span class="ps-2">
+                              <a class="fs-7 text-decoration-none" href="#"
+                                ><i class="bi bi-geo-alt-fill fs-6_5"></i>
+                                Conference room 1B</a
+                              >
+                            </span>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="border-bottom py-2">
+                        <div class="text-start">
+                          <h6 class="fs-6_5">Group Meeting</h6>
+                          <div class="time_local">
+                            <span class="pe-2">
+                              <a class="text-decoration-none fs-7" href="#"
+                                ><i class="bi bi-clock-fill fs-6_5"></i> in 32
+                                minutes</a
+                              >
+                            </span>
+                            <span class="ps-2">
+                              <a class="fs-7 text-decoration-none" href="#"
+                                ><i class="bi bi-geo-alt-fill fs-6_5"></i>
+                                Conference room 1B</a
+                              >
+                            </span>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="border-bottom py-2">
+                        <div class="text-start">
+                          <h6 class="fs-6_5">Group Meeting</h6>
+                          <div class="time_local">
+                            <span class="pe-2">
+                              <a class="text-decoration-none fs-7" href="#"
+                                ><i class="bi bi-clock-fill fs-6_5"></i> in 32
+                                minutes</a
+                              >
+                            </span>
+                            <span class="ps-2">
+                              <a class="fs-7 text-decoration-none" href="#"
+                                ><i class="bi bi-geo-alt-fill fs-6_5"></i>
+                                Conference room 1B</a
+                              >
+                            </span>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="border-bottom py-2">
+                        <div class="text-start">
+                          <h6 class="fs-6_5">Group Meeting</h6>
+                          <div class="time_local">
+                            <span class="pe-2">
+                              <a class="text-decoration-none fs-7" href="#"
+                                ><i class="bi bi-clock-fill fs-6_5"></i> in 32
+                                minutes</a
+                              >
+                            </span>
+                            <span class="ps-2">
+                              <a class="fs-7 text-decoration-none" href="#"
+                                ><i class="bi bi-geo-alt-fill fs-6_5"></i>
+                                Conference room 1B</a
+                              >
+                            </span>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="border-bottom py-2">
+                        <div class="text-start">
+                          <h6 class="fs-6_5">Group Meeting</h6>
+                          <div class="time_local">
+                            <span class="pe-2">
+                              <a class="text-decoration-none fs-7" href="#"
+                                ><i class="bi bi-clock-fill fs-6_5"></i> in 32
+                                minutes</a
+                              >
+                            </span>
+                            <span class="ps-2">
+                              <a class="fs-7 text-decoration-none" href="#"
+                                ><i class="bi bi-geo-alt-fill fs-6_5"></i>
+                                Conference room 1B</a
+                              >
+                            </span>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <div class="row justify-content-center">
+              <div class="col-lg-6">
+                <div id="chart-timeline"></div>
+              </div>
+              <div class="col-lg-6">
+                <div class="userstable">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Rank</th>
+                        <th>Profile</th>
+                        <th>Points</th>
+                        <th>Team</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>
+                          <img
+                            src="./assets/images/profile.jpg"
+                            alt=""
+                            height="55"
+                            width="55"
+                            class="rounded-circle object-fit-cover"
+                          />
+                        </td>
+                        <td>
+                          <span class="text-bg-success p-1 rounded"
+                            >88,110</span
+                          >
+                        </td>
+                        <td class="text-success">dcode</td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>
+                          <img
+                            src="./assets/images/profile.jpg"
+                            alt=""
+                            height="55"
+                            width="55"
+                            class="rounded-circle object-fit-cover"
+                          />
+                        </td>
+                        <td>
+                          <span class="text-bg-danger p-1 rounded">72,400</span>
+                        </td>
+                        <td class="text-danger">Students</td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>
+                          <img
+                            src="./assets/images/profile.jpg"
+                            alt=""
+                            height="55"
+                            width="55"
+                            class="rounded-circle object-fit-cover"
+                          />
+                        </td>
+                        <td>
+                          <span class="text-bg-warning p-1 rounded"
+                            >52,300
+                          </span>
+                        </td>
+                        <td class="text-warning">dcode</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>
+                          <img
+                            src="./assets/images/profile.jpg"
+                            alt=""
+                            height="55"
+                            width="55"
+                            class="rounded-circle object-fit-cover"
+                          />
+                        </td>
+                        <td>
+                          <span class="text-bg-success p-1 rounded"
+                            >88,110</span
+                          >
+                        </td>
+                        <td class="text-success">dcode</td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>
+                          <img
+                            src="./assets/images/profile.jpg"
+                            alt=""
+                            height="55"
+                            width="55"
+                            class="rounded-circle object-fit-cover"
+                          />
+                        </td>
+                        <td>
+                          <span class="text-bg-danger p-1 rounded">72,400</span>
+                        </td>
+                        <td class="text-danger">Students</td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>
+                          <img
+                            src="./assets/images/profile.jpg"
+                            alt=""
+                            height="55"
+                            width="55"
+                            class="rounded-circle object-fit-cover"
+                          />
+                        </td>
+                        <td>
+                          <span class="text-bg-warning p-1 rounded"
+                            >52,300
+                          </span>
+                        </td>
+                        <td class="text-warning">dcode</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <!-- Chart js -->
+
+    <script src="./assets/js/chart.js"></script>
+
+    <!-- Bootstrap js cdn link -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+      integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- js Script sheet -->
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
