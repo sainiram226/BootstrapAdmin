@@ -39,20 +39,23 @@
             </div>
             <button
               onclick="activesidebar()"
-              class="togle d-inline d-lg-none position-absolute end-0"
-            >
+              class="togle d-inline d-lg-none position-absolute end-0">
               <i class="bi bi-list text-white fs-2"></i>
             </button>
-            <input type="file" id="pro_up" onchange="loadFile(event)" hidden />
-            <a href="./userProfile.html">
+            <input
+              type="file"
+              id="pro_up"
+              onchange="loadFile(event);loadFile03(event)  "
+              hidden />
+            <label for="pro_up">
               <img
                 src="./assets/images/profile.jpg"
                 alt="user"
-                class="rounded-circle border border-white object-fit-cover" style="object-position: top;"
+                class="rounded-circle border border-white object-fit-cover"
+                style="object-position: top"
                 width="100"
                 height="102"
-                id="output" /></a
-            ><label for="pro_up">
+                id="output" />
               <div class="edit_icon position-absolute">
                 <i class="bi bi-camera text-white fs-5"></i>
               </div>
@@ -72,13 +75,28 @@
               <li>
                 <a
                   href="./index.html"
-                  class="active rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white"
-                >
+                  class="rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white">
                   <i class="bi bi-kanban fs-5"></i>
                   <span class="text-white mt-1">Dashboard</span></a
                 >
               </li>
-              <li class="accordion-item">
+              <li>
+                <a
+                  href="./userProfile.html"
+                  class="rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white">
+                  <i class="bi bi-person-badge fs-5"></i>
+                  <span class="text-white mt-1">Profile</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="./user.html"
+                  class="active rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white">
+                  <i class="bi bi-pie-chart-fill fs-5"></i>
+                  <span class="text-white mt-1">Users</span></a
+                >
+              </li>
+              <!-- <li class="accordion-item">
                 <a
                   href="#"
                   class="accordion-button collapsed position-relative rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white"
@@ -86,34 +104,29 @@
                   data-bs-toggle="collapse"
                   data-bs-target="#flush-collapseOne"
                   aria-expanded="false"
-                  aria-controls="flush-collapseOne"
-                >
+                  aria-controls="flush-collapseOne">
                   <i class="bi bi-pie-chart-fill fs-5"></i>
                   <span class="text-white mt-1">Users</span>
                   <i
-                    class="bi bi-caret-right downarrow position-absolute text-white fs-5"
-                  ></i>
+                    class="bi bi-caret-right downarrow position-absolute text-white fs-5"></i>
                 </a>
                 <ul
                   id="flush-collapseOne"
                   class="accordion-collapse collapse list-unstyled"
-                  data-bs-parent="#accordionFlushExample"
-                >
+                  data-bs-parent="#accordionFlushExample">
                   <li class="accordion-body">
                     <a
                       href="./user.html"
-                      class="rounded-3 py-2 ps-5 mb-1 d-flex text-decoration-none text-white"
-                    >
+                      class="rounded-3 py-2 ps-5 mb-1 d-flex text-decoration-none text-white">
                       <span class="text-white mt-1">User Management</span></a
                     >
                   </li>
                 </ul>
-              </li>
+              </li> -->
               <li>
                 <a
                   href="#"
-                  class="rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white"
-                >
+                  class="rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white">
                   <i class="bi bi-chat-left-text fs-5"></i>
                   <span class="text-white mt-1">Chat</span></a
                 >
@@ -121,8 +134,7 @@
               <li>
                 <a
                   href="#"
-                  class="rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white"
-                >
+                  class="rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white">
                   <i class="bi bi-people fs-5"></i>
                   <span class="text-white mt-1">Contacts</span></a
                 >
@@ -144,24 +156,20 @@
                 data-bs-toggle="collapse"
                 data-bs-target="#flush-collapsetwo"
                 aria-expanded="false"
-                aria-controls="flush-collapsetwo"
-              >
+                aria-controls="flush-collapsetwo">
                 <i class="bi bi-table me-2 fs-5"></i>
                 <span class="text-white mt-1">Tables</span>
                 <i
-                  class="bi bi-caret-right downarrow position-absolute text-white fs-5"
-                ></i>
+                  class="bi bi-caret-right downarrow position-absolute text-white fs-5"></i>
               </a>
               <ul
                 id="flush-collapsetwo"
                 class="accordion-collapse collapse list-unstyled"
-                data-bs-parent="#accordionFlushExample"
-              >
+                data-bs-parent="#accordionFlushExample">
                 <li class="accordion-body">
                   <a
-                    href="./user.html"
-                    class="rounded-3 py-2 ps-5 mb-1 d-flex text-decoration-none text-white"
-                  >
+                    href="./userTable.html"
+                    class="rounded-3 py-2 ps-5 mb-1 d-flex text-decoration-none text-white">
                     <span class="text-white mt-1">User Management</span></a
                   >
                 </li>
@@ -171,8 +179,7 @@
               <li>
                 <a
                   href="#"
-                  class="rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white"
-                >
+                  class="rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white">
                   <i class="bi bi-mortarboard me-2 fs-5"></i>
                   <span class="text-white fs-6 mt-1">Academy</span></a
                 >
@@ -180,8 +187,7 @@
               <li>
                 <a
                   href="#"
-                  class="rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white"
-                >
+                  class="rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white">
                   <i class="bi bi-chat-left-text fs-5"></i>
                   <span class="text-white mt-1">Chat</span></a
                 >
@@ -189,8 +195,7 @@
               <li>
                 <a
                   href="#"
-                  class="rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white"
-                >
+                  class="rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white">
                   <i class="bi bi-people fs-5"></i>
                   <span class="text-white mt-1">Contacts</span></a
                 >
@@ -198,8 +203,7 @@
               <li>
                 <a
                   href="#"
-                  class="rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white"
-                >
+                  class="rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white">
                   <i class="bi bi-cart3 me-2 fs-5"></i>
                   <span class="text-white fs-6 mt-1">ECommerce</span></a
                 >
@@ -207,8 +211,7 @@
               <li>
                 <a
                   href="#"
-                  class="rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white"
-                >
+                  class="rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white">
                   <i class="bi bi-cloud me-2 fs-5"></i>
                   <span class="text-white fs-6 mt-1">File Manager</span></a
                 >
@@ -216,8 +219,7 @@
               <li>
                 <a
                   href="#"
-                  class="rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white"
-                >
+                  class="rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white">
                   <i class="bi bi-kanban me-2 fs-5"></i>
                   <span class="text-white fs-6 mt-1">Help Center</span></a
                 >
@@ -225,8 +227,7 @@
               <li>
                 <a
                   href="#"
-                  class="rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white"
-                >
+                  class="rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white">
                   <i class="bi bi-envelope me-2 fs-5"></i>
                   <span class="text-white fs-6 mt-1">Mailbox</span></a
                 >
@@ -234,8 +235,7 @@
               <li>
                 <a
                   href="#"
-                  class="rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white"
-                >
+                  class="rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white">
                   <i class="bi bi-kanban me-2 fs-5"></i>
                   <span class="text-white fs-6 mt-1">Project</span></a
                 >
@@ -243,8 +243,7 @@
               <li>
                 <a
                   href="#"
-                  class="rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white"
-                >
+                  class="rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white">
                   <i class="bi bi-kanban me-2 fs-5"></i>
                   <span class="text-white fs-6 mt-1">Project</span></a
                 >

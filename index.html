@@ -10,13 +10,11 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
-      crossorigin="anonymous"
-    />
+      crossorigin="anonymous" />
     <!-- bootstrap icons -->
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
-    />
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
     <!-- css style sheet -->
     <link rel="stylesheet" href="./assets/css/style.css" />
 
@@ -28,8 +26,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
+      rel="stylesheet" />
     <!-- Chart js cdn -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -38,8 +35,7 @@
     <!-- alpine js cdn -->
     <script
       defer
-      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
-    ></script>
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   </head>
 
   <body>
@@ -53,17 +49,15 @@
             </div>
             <button
               onclick="activesidebar()"
-              class="togle d-inline d-lg-none position-absolute end-0"
-            >
+              class="togle d-inline d-lg-none position-absolute end-0">
               <i class="bi bi-list text-white fs-2"></i>
             </button>
             <input
               type="file"
               id="pro_up"
               onchange="loadFile(event);loadFile03(event)  "
-              hidden
-            />
-            <a href="./userProfile.html">
+              hidden />
+            <label for="pro_up">
               <img
                 src="./assets/images/profile.jpg"
                 alt="user"
@@ -71,8 +65,7 @@
                 style="object-position: top"
                 width="100"
                 height="102"
-                id="output" /></a
-            ><label for="pro_up">
+                id="output" />
               <div class="edit_icon position-absolute">
                 <i class="bi bi-camera text-white fs-5"></i>
               </div>
@@ -92,13 +85,28 @@
               <li>
                 <a
                   href="./index.html"
-                  class="active rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white"
-                >
+                  class="active rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white">
                   <i class="bi bi-kanban fs-5"></i>
                   <span class="text-white mt-1">Dashboard</span></a
                 >
               </li>
-              <li class="accordion-item">
+              <li>
+                <a
+                  href="./userProfile.html"
+                  class="rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white">
+                  <i class="bi bi-person-badge fs-5"></i>
+                  <span class="text-white mt-1">Profile</span></a
+                >
+              </li>
+              <li>
+                <a
+                  href="./user.html"
+                  class="rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white">
+                  <i class="bi bi-pie-chart-fill fs-5"></i>
+                  <span class="text-white mt-1">Users</span></a
+                >
+              </li>
+              <!-- <li class="accordion-item">
                 <a
                   href="#"
                   class="accordion-button collapsed position-relative rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white"
@@ -106,34 +114,29 @@
                   data-bs-toggle="collapse"
                   data-bs-target="#flush-collapseOne"
                   aria-expanded="false"
-                  aria-controls="flush-collapseOne"
-                >
+                  aria-controls="flush-collapseOne">
                   <i class="bi bi-pie-chart-fill fs-5"></i>
                   <span class="text-white mt-1">Users</span>
                   <i
-                    class="bi bi-caret-right downarrow position-absolute text-white fs-5"
-                  ></i>
+                    class="bi bi-caret-right downarrow position-absolute text-white fs-5"></i>
                 </a>
                 <ul
                   id="flush-collapseOne"
                   class="accordion-collapse collapse list-unstyled"
-                  data-bs-parent="#accordionFlushExample"
-                >
+                  data-bs-parent="#accordionFlushExample">
                   <li class="accordion-body">
                     <a
                       href="./user.html"
-                      class="rounded-3 py-2 ps-5 mb-1 d-flex text-decoration-none text-white"
-                    >
+                      class="rounded-3 py-2 ps-5 mb-1 d-flex text-decoration-none text-white">
                       <span class="text-white mt-1">User Management</span></a
                     >
                   </li>
                 </ul>
-              </li>
+              </li> -->
               <li>
                 <a
                   href="#"
-                  class="rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white"
-                >
+                  class="rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white">
                   <i class="bi bi-chat-left-text fs-5"></i>
                   <span class="text-white mt-1">Chat</span></a
                 >
@@ -141,8 +144,7 @@
               <li>
                 <a
                   href="#"
-                  class="rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white"
-                >
+                  class="rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white">
                   <i class="bi bi-people fs-5"></i>
                   <span class="text-white mt-1">Contacts</span></a
                 >
@@ -164,24 +166,20 @@
                 data-bs-toggle="collapse"
                 data-bs-target="#flush-collapsetwo"
                 aria-expanded="false"
-                aria-controls="flush-collapsetwo"
-              >
+                aria-controls="flush-collapsetwo">
                 <i class="bi bi-table me-2 fs-5"></i>
                 <span class="text-white mt-1">Tables</span>
                 <i
-                  class="bi bi-caret-right downarrow position-absolute text-white fs-5"
-                ></i>
+                  class="bi bi-caret-right downarrow position-absolute text-white fs-5"></i>
               </a>
               <ul
                 id="flush-collapsetwo"
                 class="accordion-collapse collapse list-unstyled"
-                data-bs-parent="#accordionFlushExample"
-              >
+                data-bs-parent="#accordionFlushExample">
                 <li class="accordion-body">
                   <a
-                    href="./user.html"
-                    class="rounded-3 py-2 ps-5 mb-1 d-flex text-decoration-none text-white"
-                  >
+                    href="./userTable.html"
+                    class="rounded-3 py-2 ps-5 mb-1 d-flex text-decoration-none text-white">
                     <span class="text-white mt-1">User Management</span></a
                   >
                 </li>
@@ -191,8 +189,7 @@
               <li>
                 <a
                   href="#"
-                  class="rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white"
-                >
+                  class="rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white">
                   <i class="bi bi-mortarboard me-2 fs-5"></i>
                   <span class="text-white fs-6 mt-1">Academy</span></a
                 >
@@ -200,8 +197,7 @@
               <li>
                 <a
                   href="#"
-                  class="rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white"
-                >
+                  class="rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white">
                   <i class="bi bi-chat-left-text fs-5"></i>
                   <span class="text-white mt-1">Chat</span></a
                 >
@@ -209,8 +205,7 @@
               <li>
                 <a
                   href="#"
-                  class="rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white"
-                >
+                  class="rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white">
                   <i class="bi bi-people fs-5"></i>
                   <span class="text-white mt-1">Contacts</span></a
                 >
@@ -218,8 +213,7 @@
               <li>
                 <a
                   href="#"
-                  class="rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white"
-                >
+                  class="rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white">
                   <i class="bi bi-cart3 me-2 fs-5"></i>
                   <span class="text-white fs-6 mt-1">ECommerce</span></a
                 >
@@ -227,8 +221,7 @@
               <li>
                 <a
                   href="#"
-                  class="rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white"
-                >
+                  class="rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white">
                   <i class="bi bi-cloud me-2 fs-5"></i>
                   <span class="text-white fs-6 mt-1">File Manager</span></a
                 >
@@ -236,8 +229,7 @@
               <li>
                 <a
                   href="#"
-                  class="rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white"
-                >
+                  class="rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white">
                   <i class="bi bi-kanban me-2 fs-5"></i>
                   <span class="text-white fs-6 mt-1">Help Center</span></a
                 >
@@ -245,8 +237,7 @@
               <li>
                 <a
                   href="#"
-                  class="rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white"
-                >
+                  class="rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white">
                   <i class="bi bi-envelope me-2 fs-5"></i>
                   <span class="text-white fs-6 mt-1">Mailbox</span></a
                 >
@@ -254,8 +245,7 @@
               <li>
                 <a
                   href="#"
-                  class="rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white"
-                >
+                  class="rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white">
                   <i class="bi bi-kanban me-2 fs-5"></i>
                   <span class="text-white fs-6 mt-1">Project</span></a
                 >
@@ -263,8 +253,7 @@
               <li>
                 <a
                   href="#"
-                  class="rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white"
-                >
+                  class="rounded-3 py-2 px-3 mb-1 d-flex text-decoration-none text-white">
                   <i class="bi bi-kanban me-2 fs-5"></i>
                   <span class="text-white fs-6 mt-1">Project</span></a
                 >
@@ -279,14 +268,12 @@
         <header>
           <nav
             id="searchbar"
-            class="navbar bg-white border-bottom shadow-sm position-relative d-flex justify-content-between align-items-center py-2 px-4"
-          >
+            class="navbar bg-white border-bottom shadow-sm position-relative d-flex justify-content-between align-items-center py-2 px-4">
             <button onclick="activesidebar()" class="togle">
               <i class="bi bi-list fs-2"></i>
             </button>
             <div
-              class="notify d-flex align-content-center justify-content-center"
-            >
+              class="notify d-flex align-content-center justify-content-center">
               <button onclick="showsearch()" class="icons">
                 <i class="bi bi-search fs-5 me-4"></i>
               </button>
@@ -296,14 +283,12 @@
                   class="dropdown-toggle"
                   type="button"
                   data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
+                  aria-expanded="false">
                   <img
                     src="./assets/images/india.png"
                     alt="flag"
                     height="33"
-                    width="33"
-                  />
+                    width="33" />
                 </button>
                 <ul class="dropdown-menu top-100 border-0 shadow-sm">
                   <li>
@@ -312,8 +297,7 @@
                         src="./assets/images/india.png"
                         alt="flag"
                         height="33"
-                        width="33"
-                      />
+                        width="33" />
                       <span>Hindi</span></a
                     >
                   </li>
@@ -323,8 +307,7 @@
                         src="./assets/images/united-states-of-america.png"
                         alt="flag"
                         height="33"
-                        width="33"
-                      />
+                        width="33" />
                       <span>English</span></a
                     >
                   </li>
@@ -333,8 +316,7 @@
             </div>
 
             <div
-              class="searchbar bg-white position-absolute w-100 h-100 start-0 d-flex justify-content-between"
-            >
+              class="searchbar bg-white position-absolute w-100 h-100 start-0 d-flex justify-content-between">
               <button onclick="showsearch()" class="icons">
                 <i class="bi bi-search fs-5 ms-4"></i>
               </button>
@@ -343,8 +325,7 @@
                 placeholder="Search...."
                 type="search"
                 name="search"
-                id="search"
-              />
+                id="search" />
               <button onclick="showsearch()" class="icons">
                 <i class="bi bi-x fs-2 me-4"></i>
               </button>
@@ -354,20 +335,18 @@
         <!-- bio card -->
         <div
           class="card_head py-5 bg-white border-bottom"
-          style="height: 204px"
-        >
+          style="min-height: 204px">
           <div class="container">
-            <div class="row justify-content-between">
-              <div class="col-6">
-                <div class="d-flex">
+            <div class="row justify-content-md-between justify-content-start">
+              <div class="col-md-6 col-sm-12 col-12">
+                <div class="d-flex flex-wrap">
                   <img
                     src="./assets/images/profile.jpg"
                     alt="user pic"
                     class="rounded-circle border object-fit-cover border-white"
                     width="60"
                     height="60"
-                    id="output03"
-                  />
+                    id="output03" />
                   <span class="ms-3">
                     <h2>Welcome back, Brian!</h2>
                     <p>
@@ -377,8 +356,8 @@
                   </span>
                 </div>
               </div>
-              <div class="col-4">
-                <div class="buttons mt-3 text-end">
+              <div class="col-xxl-4 col-md-6 col-sm-12 col-12">
+                <div class="buttons mt-3 text-md-end text-start">
                   <button class="btn rounded-pill btn-dark px-4 py-2">
                     <i class="bi bi-envelope-fill text-white fs-6 me-2"></i>
                     <span class="text-white">Messages</span>
@@ -407,8 +386,7 @@
                           class="dropdown-toggle"
                           type="button"
                           data-bs-toggle="dropdown"
-                          aria-expanded="false"
-                        >
+                          aria-expanded="false">
                           <i class="bi bi-three-dots-vertical"></i>
                         </button>
                         <ul class="dropdown-menu">
@@ -444,8 +422,7 @@
                           class="dropdown-toggle"
                           type="button"
                           data-bs-toggle="dropdown"
-                          aria-expanded="false"
-                        >
+                          aria-expanded="false">
                           <i class="bi bi-three-dots-vertical"></i>
                         </button>
                         <ul class="dropdown-menu">
@@ -481,8 +458,7 @@
                           class="dropdown-toggle"
                           type="button"
                           data-bs-toggle="dropdown"
-                          aria-expanded="false"
-                        >
+                          aria-expanded="false">
                           <i class="bi bi-three-dots-vertical"></i>
                         </button>
                         <ul class="dropdown-menu">
@@ -518,8 +494,7 @@
                           class="dropdown-toggle"
                           type="button"
                           data-bs-toggle="dropdown"
-                          aria-expanded="false"
-                        >
+                          aria-expanded="false">
                           <i class="bi bi-three-dots-vertical"></i>
                         </button>
                         <ul class="dropdown-menu">
@@ -563,8 +538,7 @@
                     <span>Last Week</span>
                   </button>
                   <button
-                    class="rounded-pill fs-6_5 bg-secondary-subtle px-4 py-2"
-                  >
+                    class="rounded-pill fs-6_5 bg-secondary-subtle px-4 py-2">
                     This Week
                   </button>
                 </div>
@@ -637,8 +611,7 @@
                       <h6>Schedule</h6>
                       <div class="buttons">
                         <button
-                          class="rounded-pill fs-6_5 bg-secondary-subtle px-4 py-2"
-                        >
+                          class="rounded-pill fs-6_5 bg-secondary-subtle px-4 py-2">
                           Today
                         </button>
                         <button class="rounded-pill fs-6_5 px-4 py-2 me-1">
@@ -658,8 +631,7 @@
                         <div class="col-6">
                           <div
                             class="text-center py-4"
-                            style="background: #f8fafc"
-                          >
+                            style="background: #f8fafc">
                             <h2 class="fw-bold">524</h2>
                             <span class="text-black">New task</span>
                           </div>
@@ -667,8 +639,7 @@
                         <div class="col-6">
                           <div
                             class="text-center py-4"
-                            style="background: #f8fafc"
-                          >
+                            style="background: #f8fafc">
                             <h2 class="fw-bold">119</h2>
                             <span class="text-black">Complete task</span>
                           </div>
@@ -683,8 +654,7 @@
                       <h6>Schedule</h6>
                       <div class="buttons">
                         <button
-                          class="rounded-pill fs-6_5 bg-secondary-subtle px-4 py-2"
-                        >
+                          class="rounded-pill fs-6_5 bg-secondary-subtle px-4 py-2">
                           Today
                         </button>
                         <button class="rounded-pill fs-6_5 px-4 py-2 me-1">
@@ -858,8 +828,7 @@
                             alt=""
                             height="55"
                             width="55"
-                            class="rounded-circle object-fit-cover"
-                          />
+                            class="rounded-circle object-fit-cover" />
                         </td>
                         <td>
                           <span class="text-bg-success p-1 rounded"
@@ -876,8 +845,7 @@
                             alt=""
                             height="55"
                             width="55"
-                            class="rounded-circle object-fit-cover"
-                          />
+                            class="rounded-circle object-fit-cover" />
                         </td>
                         <td>
                           <span class="text-bg-danger p-1 rounded">72,400</span>
@@ -892,8 +860,7 @@
                             alt=""
                             height="55"
                             width="55"
-                            class="rounded-circle object-fit-cover"
-                          />
+                            class="rounded-circle object-fit-cover" />
                         </td>
                         <td>
                           <span class="text-bg-warning p-1 rounded"
@@ -910,8 +877,7 @@
                             alt=""
                             height="55"
                             width="55"
-                            class="rounded-circle object-fit-cover"
-                          />
+                            class="rounded-circle object-fit-cover" />
                         </td>
                         <td>
                           <span class="text-bg-success p-1 rounded"
@@ -928,8 +894,7 @@
                             alt=""
                             height="55"
                             width="55"
-                            class="rounded-circle object-fit-cover"
-                          />
+                            class="rounded-circle object-fit-cover" />
                         </td>
                         <td>
                           <span class="text-bg-danger p-1 rounded">72,400</span>
@@ -944,8 +909,7 @@
                             alt=""
                             height="55"
                             width="55"
-                            class="rounded-circle object-fit-cover"
-                          />
+                            class="rounded-circle object-fit-cover" />
                         </td>
                         <td>
                           <span class="text-bg-warning p-1 rounded"
@@ -972,13 +936,11 @@
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
       integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
       integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous"></script>
 
     <!-- js Script sheet -->
     <script src="./assets/js/script.js"></script>
